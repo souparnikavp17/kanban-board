@@ -1,0 +1,160 @@
+ * {
+
+   font-family: system-ui, sans-serif;
+ }
+
+ body {
+   margin: 0;
+   color:#f5f2eb;
+ }
+
+ .app {
+   background-color: #E2E8F0;
+   padding: 20px;
+   min-height: 100vh;
+ }
+
+ h1 {
+   text-align: center;
+   padding-top: 20px;
+   margin-bottom: 20px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 250%;
+   color: #052c55;
+
+ }
+
+
+ .subtitle {
+
+   text-align: center;
+   color: #393a3a;
+   padding-bottom: 30px;
+
+
+ }
+
+
+ .board {
+   display: flex;
+   gap: 50px;
+   justify-content: center;
+
+ }
+
+ .column {
+   background: #f7f7fb;
+   border-radius: 8px;
+   width: 300px;
+   min-height: 400px;
+   display: flex;
+   flex-direction: column;
+   border: 1px solid #e5e7eb;
+   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+   padding: 15px; 
+   box-sizing: border-box;
+  
+ }
+
+ .column h2 {
+   text-align: center;
+   font-size:130%;
+   margin-bottom: 10px;
+   color: #1E293B;
+ }
+
+
+
+ .task {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   border-radius: 8px;
+   margin-bottom: 10px;
+   font-weight: 500;
+   cursor: grab;
+   color: #333;
+   inline-size: 93%;         
+   overflow-wrap: break-word; 
+   
+ }
+
+
+
+ .task.todo {
+   background: #ffadad;
+ }
+
+ .task.progress {
+   background: #f9ef86;
+ }
+
+ .task.done {
+   background: #a9f19a;
+
+ }
+
+
+ .column.todo {
+   border-top: 6px solid #ff595e;
+ }
+
+ .column.progress {
+   border-top: 6px solid #ffc014;
+ }
+
+ .column.done {
+   border-top: 6px solid #8ac926;
+ }
+
+
+ .task:active {
+   cursor: grabbing;
+ }
+
+ button {
+   margin-top: auto;
+   padding: 10px;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   background: #ffd166;
+   font-weight: bold;
+ }
+
+ .status {
+   text-align: center;
+   margin-bottom: 15px;
+   font-weight: bold;
+ }
+
+ .status.online {
+
+   color: #51711d;
+ }
+
+ .status.offline {
+
+   color: #dc232a;
+ }
+
+
+
+ .task {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .delete {
+   background: transparent;
+   border: none;
+   color: #ff3b42;
+   font-size: 12px;
+   cursor: pointer;
+ }
+
+ .delete:hover {
+   transform: scale(1.2);
+ }
