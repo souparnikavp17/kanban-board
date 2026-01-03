@@ -1,16 +1,99 @@
-# React + Vite
+#       Kanban Board (PWA)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Kanban board application built with an **offline-first architecture**, designed to work seamlessly even when the user is completely offline. All changes made offline are synced once the network is restored.
 
-Currently, two official plugins are available:
+This project was built as part of **Task 2 – Progressive Web App**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📋 Kanban board with 3 columns:
+  - **To-do**
+  - **In-progress**
+  - **Completed**
+- ➕ Add tasks to any column
+- 🗑️ Delete tasks
+- 🔀 Drag and drop tasks between columns
+- 📡 Online / Offline status indicator
+- 💾 Works without internet (offline-first)
+- 🎨 Color-coded tasks based on column
+- 🌙 Dark mode (optional UX enhancement)
+- 📱 Progressive Web App (installable)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Offline-First Approach
+
+This application follows the **Offline First** principle:
+
+- The UI works even when the device is completely offline
+- User actions are never blocked due to lack of internet
+- Data consistency is maintained once connectivity is restored
+
+### How it works:
+1. When offline, task changes are stored locally
+2. The app continues functioning normally
+3. When back online, changes are synced to the server
+
+---
+
+## 🗃️ Local Storage Strategy
+
+### IndexedDB
+- Used to store tasks locally
+- Persists data across refreshes
+- Enables full offline usage
+
+### Why IndexedDB?
+- Asynchronous
+- Designed for large structured data
+- Supported by all modern browsers
+
+---
+
+## 🌐 Online / Offline Detection
+
+The app listens to browser network events:
+- `navigator.onLine`
+- `online` / `offline` events
+
+This allows:
+- Real-time network status display
+- Conditional sync logic
+- Better UX during connectivity changes
+
+---
+
+## 🔄 Sync Strategy (Conceptual)
+
+> Note: Basic sync logic implemented. Conflict resolution is a future improvement.
+
+- Offline actions are queued locally
+- When the app detects connectivity restoration:
+  - Pending changes are sent to the backend
+  - Local queue is cleared
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React (Vite)
+- HTML, CSS (custom design system)
+- IndexedDB
+- Service Worker (PWA)
+
+### Tooling
+- Git & GitHub
+- npm
+
+---
+
+## ▶️ How to Run Locally
+
+```bash
+git clone https://github.com/your-username/kanban-offline-first.git
+cd client
+npm install
+npm run dev
