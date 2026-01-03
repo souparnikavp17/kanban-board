@@ -1,99 +1,63 @@
-#       Kanban Board (PWA)
+# Kanban Board (PWA)
 
-A Kanban board application built with an **offline-first architecture**, designed to work seamlessly even when the user is completely offline. All changes made offline are synced once the network is restored.
+This project is an Offline-First Kanban Board built as a Progressive Web App (PWA).  
+It allows users to manage tasks across three columns — To-do, In-progress, and Done — and continues to work seamlessly even when the internet connection is unavailable.
 
-This project was built as part of **Task 2 – Progressive Web App**.
-
----
-
-## 🚀 Features
-
-- 📋 Kanban board with 3 columns:
-  - **To-do**
-  - **In-progress**
-  - **Completed**
-- ➕ Add tasks to any column
-- 🗑️ Delete tasks
-- 🔀 Drag and drop tasks between columns
-- 📡 Online / Offline status indicator
-- 💾 Works without internet (offline-first)
-- 🎨 Color-coded tasks based on column
-- 🌙 Dark mode (optional UX enhancement)
-- 📱 Progressive Web App (installable)
+All changes made while offline are stored locally and synchronized once the user reconnects to the internet.
 
 ---
 
-## 🧠 Offline-First Approach
+## Features
 
-This application follows the **Offline First** principle:
-
-- The UI works even when the device is completely offline
-- User actions are never blocked due to lack of internet
-- Data consistency is maintained once connectivity is restored
-
-### How it works:
-1. When offline, task changes are stored locally
-2. The app continues functioning normally
-3. When back online, changes are synced to the server
-
----
-
-## 🗃️ Local Storage Strategy
-
-### IndexedDB
-- Used to store tasks locally
-- Persists data across refreshes
-- Enables full offline usage
-
-### Why IndexedDB?
-- Asynchronous
-- Designed for large structured data
-- Supported by all modern browsers
+- Three-column Kanban board: To-do, In-progress, Done
+- Add and delete tasks in each column
+- Drag and drop tasks between columns
+- Color-coded tasks based on column
+- Offline-first behavior using IndexedDB
+- Automatic sync when back online
+- Online / Offline status indicator
+- Installable as a Progressive Web App
+- Responsive and minimalist UI
 
 ---
 
-## 🌐 Online / Offline Detection
-
-The app listens to browser network events:
-- `navigator.onLine`
-- `online` / `offline` events
-
-This allows:
-- Real-time network status display
-- Conditional sync logic
-- Better UX during connectivity changes
-
----
-
-## 🔄 Sync Strategy (Conceptual)
-
-> Note: Basic sync logic implemented. Conflict resolution is a future improvement.
-
-- Offline actions are queued locally
-- When the app detects connectivity restoration:
-  - Pending changes are sent to the backend
-  - Local queue is cleared
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
-- React (Vite)
-- HTML, CSS (custom design system)
-- IndexedDB
-- Service Worker (PWA)
+- React
+- Vite
+- CSS
 
-### Tooling
-- Git & GitHub
-- npm
+### PWA & Offline Support
+- Service Workers
+- IndexedDB
+- Cache API
+
+### Version Control
+- Git
+- GitHub
 
 ---
 
-## ▶️ How to Run Locally
+## Offline-First Architecture
+
+- The application shell (HTML, CSS, JS) is cached using a service worker.
+- Task data is stored in IndexedDB when offline.
+- User actions performed offline are queued locally.
+- Once the internet connection is restored, pending changes are synced automatically.
+
+---
+
+## How to Run Locally
+
+### Prerequisites
+- Node.js (v18 or later)
+- npm
+
+### Steps
 
 ```bash
-git clone https://github.com/your-username/kanban-offline-first.git
-cd client
+git clone https://github.com/souparnikavp17/kanban-board.git
+cd kanban-board
 npm install
 npm run dev
