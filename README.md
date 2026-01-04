@@ -1,6 +1,6 @@
-# Offline-First Kanban Board (PWA)
+# Kanban Board (PWA)
 
-This project is an Offline-First Kanban Board built as a Progressive Web App (PWA).  
+This project is a Kanban Board built as a Progressive Web App (PWA).  
 It allows users to manage tasks across three columns — To-do, In-progress, and Done — and continues to work seamlessly even when the internet connection is unavailable.
 
 All changes made while offline are stored locally and synchronized once the user reconnects to the internet.
